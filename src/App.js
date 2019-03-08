@@ -4,9 +4,11 @@ import Movies from "./components/movies";
 import Customers from "./components/customers";
 import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
-import "./App.css";
 import NavBar from "./components/navBar";
 import MovieForm from "./components/movieForm";
+import LoginForm from "./components/loginForm";
+import "./App.css";
+import RegisterForm from "./components/registerForm";
 
 class App extends Component {
   render() {
@@ -15,15 +17,17 @@ class App extends Component {
         <NavBar />
         <main className="container">
           <Switch>
-            <Route path="/movies/:id" component={MovieForm} />
-            <Route path="/movies" component={Movies} />
-            <Route path="/customers" component={Customers} />
-            <Route path="/rentals" component={Rentals} />
-            <Route path="/not-found" component={NotFound} />
+            <Route path="/register" component={RegisterForm} />{" "}
+            <Route path="/login" component={LoginForm} />{" "}
+            <Route path="/movies/:id" component={MovieForm} />{" "}
+            <Route path="/movies" component={Movies} />{" "}
+            <Route path="/customers" component={Customers} />{" "}
+            <Route path="/rentals" component={Rentals} />{" "}
+            <Route path="/not-found" component={NotFound} />{" "}
             <Redirect from="/" exact to="/movies" />
             <Redirect to="/not-found" />
-          </Switch>
-        </main>
+          </Switch>{" "}
+        </main>{" "}
       </React.Fragment>
     );
   }
